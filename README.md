@@ -8,4 +8,5 @@
 
 ## Ressources
 
-[Data](https://github.com/owid/co2-data?tab=readme-ov-file)
+- [Data](https://github.com/owid/co2-data?tab=readme-ov-file)
+- [Visualisation](https://ourworldindata.org/co2-and-greenhouse-gas-emissions)
