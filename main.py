@@ -8,6 +8,8 @@ data = {
     'Population': [67391582, 331883986, 83883596, 125584838, 213993437]  # Population estimée
 }
 
+
+
 # Créer un DataFrame avec ces données
 df = pd.DataFrame(data)
 
