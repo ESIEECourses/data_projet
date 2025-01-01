@@ -1,0 +1,40 @@
+# Les environnements virtuels
+.venv/
+env/
+venv/
+
+# Les fichiers de configuration spécifiques aux IDE
+*.vscode/
+.idea/
+*.swp
+
+# Les fichiers de bytecode Python
+*.pyc
+*.pyo
+__pycache__/
+
+# Les fichiers de logs
+*.log
+
+# Les fichiers de données nettoyées générés automatiquement
+data/cleaned/
+
+# Les fichiers temporaires ou de sauvegarde
+*.tmp
+*.bak
+*.old
+*.save
+
+# Les fichiers spécifiques aux systèmes d'exploitation
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
+# Les fichiers de dépendances générés localement
+*.egg-info/
+*.eggs/
+build/
+dist/
+
+# Les fichiers de cache ou de compilation
+.cache/
+*.pytest_cache/
