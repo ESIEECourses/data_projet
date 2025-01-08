@@ -2,17 +2,17 @@ import os
 import pandas as pd
 from clean_data import clean_data
 
-# Construire le chemin relatif
-base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # Le répertoire 'src'
-data_path = os.path.join(base_dir, "..", "data", "raw", "owid-co2-data.csv")
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+data_path = os.path.join(base_dir, "data", "raw", "owid-co2-data.csv")
+cleaned_path = os.path.join(base_dir, "data", "cleaned", "cleaneddata.csv")
 
-# Charger les données brutes
+if not os.path.exists(data_path):
+    raise FileNotFoundError(f"Le fichier source est introuvable : {data_path}")
+
 df_raw = pd.read_csv(data_path)
-
-# Appliquer le nettoyage
 df_cleaned = clean_data(df_raw)
 
-# Sauvegarder les données nettoyées
-df_cleaned.to_csv("data/cleaned/cleaneddata.csv", index=False)
+os.makedirs(os.path.dirname(cleaned_path), exist_ok=True)
+df_cleaned.to_csv(cleaned_path, index=False)
 
-print("Données nettoyées et enregistrées dans data/cleaned/cleaneddata.csv")
+print(f"Données nettoyées et enregistrées dans {cleaned_path}")
