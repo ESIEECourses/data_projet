@@ -31,3 +31,8 @@ def clean_data(input_path, output_path):
 
     df.to_csv(output_path + "cleaneddata.csv", index=False)
     return df
+
+
+"""
+supprimer ce qui n'ont pas d'isocode 
+"""

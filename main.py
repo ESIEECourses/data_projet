@@ -8,16 +8,19 @@ from src.pages.histogramme import create_histogramme_layout
 from src.pages.carte import create_carte
 from src.pages.histogramme_pays import create_histogramme_pays_layout
 
-# Vérifier si les données nettoyées existent
+# Chemins des fichiers
 raw_data_path = "data/raw/owid-co2-data.csv"
 cleaned_data_path = "data/cleaned/"
 cleaned_file = os.path.join(cleaned_data_path, "cleaneddata.csv")
 
-if not os.path.exists(cleaned_file):
-    os.makedirs(cleaned_data_path, exist_ok=True)
-    data = clean_data(raw_data_path, cleaned_data_path)
-else:
-    data = pd.read_csv(cleaned_file)
+# Effacer les données existantes si elles existent
+if os.path.exists(cleaned_file):
+    print(f"Suppression de l'ancien fichier : {cleaned_file}")
+    os.remove(cleaned_file)
+
+# Générer les nouvelles données nettoyées
+os.makedirs(cleaned_data_path, exist_ok=True)
+data = clean_data(raw_data_path, cleaned_data_path)
 
 # Créer l'application
 app = Dash(__name__, suppress_callback_exceptions=True)
