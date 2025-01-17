@@ -1,0 +1,47 @@
+*{
+    font-family:'Roboto';
+}
+
+#github-logo{
+    height: 28px;
+    width: auto;
+}
+
+.navbar-nav{
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.align-center{
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-row{
+    height: 536px;
+    padding: 15px;
+}
+
+.figure-card{
+    height: 520px;
+    padding: 15px;
+}
+
+#attribution{
+    text-align: right;
+}
+
+#attribution > p{
+    margin: 0;
+}
+
+#about-modal{
+    max-height: 90%;
+    overflow-y: scroll;
+}
+
+@media (max-width: 320px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+}

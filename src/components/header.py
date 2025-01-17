@@ -1,27 +1,25 @@
-from dash import html, dcc
+import dash_bootstrap_components as dbc
+from dash import html
 
-def header():
-    """
-    Crée un en-tête pour le tableau de bord avec des liens vers les pages principales.
-    """
-    return html.Header(
-        style={
-            "display": "flex",
-            "justifyContent": "space-between",
-            "alignItems": "center",
-            "padding": "1em",
-            "backgroundColor": "#007BFF",
-            "color": "white"
-        },
-        children=[
-            html.H1("Mon Dashboard", style={"margin": "0", "fontSize": "1.5em"}),
-            html.Nav(
-                style={"display": "flex", "gap": "1em"},
-                children=[
-                    dcc.Link("Dashboard", href="/", style={"color": "white", "textDecoration": "none"}),
-                    dcc.Link("Histogramme", href="/histogramme", style={"color": "white", "textDecoration": "none"}),
-                    dcc.Link("Carte", href="/carte", style={"color": "white", "textDecoration": "none"})
-                ]
+# Définition de la barre de navigation
+navbar = dbc.NavbarSimple(
+    [
+        # Élément de navigation : Bouton d'information
+        dbc.NavItem(
+            dbc.NavLink(
+                html.Img(
+                    src="assets/github-mark-white.png",
+                    alt="Source Code",
+                    id="github-logo",
+                ),
+                href="https://github.com/ESIEECourses/data_projet",
+                target="_blank",
+                className="p-1",
             )
-        ]
-    )
+        ),
+    ],
+    brand="Dashboard",  # Nom de la marque ou titre affiché dans la barre
+    id="navbar",  # Identifiant unique pour la barre de navigation (utile pour le style ou les interactions)
+    color="dark",  # Couleur de fond de la barre de navigation
+    dark=True,  # Active un thème sombre pour la barre
+)
