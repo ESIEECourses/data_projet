@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-from clean_data import clean_data
+from utils.cleanData import clean_data
 
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 data_path = os.path.join(base_dir, "data", "raw", "owid-co2-data.csv")
@@ -15,4 +15,4 @@ df_cleaned = clean_data(df_raw)
 os.makedirs(os.path.dirname(cleaned_path), exist_ok=True)
 df_cleaned.to_csv(cleaned_path, index=False)
 
-print(f"Données nettoyées et enregistrées dans {cleaned_path}")
+print("Données nettoyées et enregistrées dans {cleaned_path}")

@@ -1,12 +1,26 @@
 from dash import Dash, html, dcc, Input, Output
+import os
 import pandas as pd
+import plotly.express as px
+from src.utils.cleanData import clean_data
 from src.pages.home import create_home_page
 from src.pages.histogramme import create_histogramme_layout
 from src.pages.carte import create_carte
 from src.pages.histogramme_pays import create_histogramme_pays_layout
 
-# Charger les données
-data = pd.read_csv("data/cleaned/cleaneddata.csv")
+# Chemins des fichiers
+raw_data_path = "data/raw/owid-co2-data.csv"
+cleaned_data_path = "data/cleaned/"
+cleaned_file = os.path.join(cleaned_data_path, "cleaneddata.csv")
+
+# Effacer les données existantes si elles existent
+if os.path.exists(cleaned_file):
+    print(f"Suppression de l'ancien fichier : {cleaned_file}")
+    os.remove(cleaned_file)
+
+# Générer les nouvelles données nettoyées
+os.makedirs(cleaned_data_path, exist_ok=True)
+data = clean_data(raw_data_path, cleaned_data_path)
 
 # Créer l'application
 app = Dash(__name__, suppress_callback_exceptions=True)

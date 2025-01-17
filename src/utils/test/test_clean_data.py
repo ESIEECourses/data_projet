@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-from clean_data import clean_data
+from utils.cleanData import clean_data
 
 # Construire le chemin relatif
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # Le répertoire 'src'
