@@ -6,13 +6,17 @@
 - [@assiamxn](https://github.com/assiamxn)
 
 ## Guide
+1. Installez les dépendances avec la commande : 
+`pip install -r requirements.txt`
+2. Récupérez et lancez le dashboard avec : 
+`python main.py`
 
 ## Data
 Les [données utilisées](https://github.com/owid/co2-data?tab=readme-ov-file) sont fournis par [Our World In Data](https://ourworldindata.org/) et sont récupérée dynamiquement.
 Le set de data provient de plusieurs sources que vous pouvez trouver directement dans le readme.  
 
 ## Developer guide
-!(arbo)[assets/image.png]                                # demonstration du dashboard
+![arbo](assets/image.png)                             # demonstration du dashboard
 
 ## Rapport d'analyse
 On peut voir dans les statisiques générales que les pays les plus émetteurs de co2 ne sont pas forcément ceux dont les habitants en produisent le plus. Et qu'il y a une légère baisse générale quant à l'émissions de co2 par personne au cours des dernières années.
